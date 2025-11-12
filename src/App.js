@@ -1,87 +1,56 @@
-import React from 'react'
-import './App.css'
-import { Routes, Route} from 'react-router-dom'
-import Header from './components/Header'
-import Home from './pages/home/Home'
-import About from './pages/about/About'
-import Contact from './pages/contact/Contact'
-import Signin from './pages/user/Signin'
-import Signup from './pages/user/Signup'
-import Cart from './pages/cart/Cart'
-import Career from './pages/services/Career'
-import Consultancy from './pages/services/Consultancy'
-import Complaints from './pages/services/Complaints'
-import Policies from './pages/services/Policies'
-import Individual from './pages/membership/Individual'
-import Institutions from './pages/membership/Institutions'
-import Products from './pages/membership/Products'
-import MembershipRegistration from './pages/membership/MembershipRegistration'
-import Events from './pages/activities/Events'
-import Pressconference from './pages/activities/Pressconference'
-import Mou from './pages/activities/Mou'
-import News from './pages/activities/News'
-import PressRelease from './pages/media/PressRelease'
-import EventNews from './pages/media/EventNews'
-import EventVideo from './pages/media/EventVideo'
-import Gallery from './pages/media/Gallery'
-import PublishedNews from './pages/media/PublishedNews'
-import GoverningBody from './pages/administrative/GoverningBody'
-import Ourteam from './pages/administrative/Ourteam'
-import Leadership from './pages/administrative/Leadership'
-import Footer from './components/Footer'
-import BlogDetails from './pages/media/BolgDetails'
-import AllMember from './pages/administrative/AllMember'
-import MemberDetails from './pages/administrative/MemberDetails'
-import MembershipForm from './pages/membership/MembershipForm'
-import Opdslip from './components/Opdslip'
-import All_Sectors from './pages/sectors/All_Sectors'
-import Newsandupdate from './pages/media/Newsandupdate'
-import Stakesholder from './components/Stakesholder'
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/home/Home';
+import Contact from './pages/contact/Contact';
+import Footer from './components/Footer';
+import './App.css';
+import Login from './pages/user/Login';
+import Regsiter from './pages/user/Regsiter';
+import About from './pages/about/About';
+import UserDashboard from './pages/user/UserDashboard';
+import ScrollToTop from './pages/TopToBack/ScrollToTop';
+import Top from './pages/TopToBack/Top';
+import OtpVerification from './pages/user/OtpVerification';
+import MyProfile from './pages/user/Myrpofile';
+import MyCourse from './pages/user/MyCourse';
+import MyJob from './pages/user/MyJob';
+import Header from './components/Header';
+import Projects from './pages/project/Projects.jsx';
+import Skills from './pages/skill/Skills.jsx';
+import ExperienceEducation from './pages/experience/ExperienceEducation.jsx';
+
+
 const App = () => {
   return (
-    <div>
-  
-      <Header />
-       <Routes>
-           <Route path='/' element={<Home />} />
-           <Route path='/opdslip' element={<Opdslip />} />
-           <Route path='/career' element={<Career />} />
-           <Route path='/focussector' element={<All_Sectors />} />
-           <Route path='/consultancy' element={<Consultancy />} />
-           <Route path='/complaints' element={<Complaints />} />
-           <Route path='/policies' element={<Policies />} />
-           <Route path='/individual' element={<Individual />} />
-           <Route path='/institutions' element={<Institutions />} />
-           <Route path='/products' element={<Products />} />
-           <Route path='/membership_registration' element={<MembershipRegistration />} />
-           <Route path='/events' element={<Events />} />
-           <Route path='/press_conference' element={<Pressconference />} />
-           <Route path='/mou' element={<Mou />} />
-           <Route path='/news' element={<News />} />
-           <Route path='/press_release' element={<PressRelease />} />
-           <Route path='/event_news' element={<EventNews />} />
-           <Route path='/published_news' element={<PublishedNews />} />
-           <Route path='/blogdetails' element={<BlogDetails />} />
-           <Route path='/event_video' element={<EventVideo />} />
-           <Route path='/gallery' element={<Gallery />} />
-           <Route path='/newsandupdate' element={<Newsandupdate />} />    
-           <Route path='/membershipform' element={<MembershipForm />} />   
-           <Route path='/aboutus' element={<About />} />
-           <Route path='/contact' element={<Contact />} />
-           <Route path='/sign-in' element={<Signin />} />
-           <Route path='/sign-up' element={<Signup />} />
-           <Route path='/cart' element={<Cart />} />
-           <Route path='/governing_body' element={<GoverningBody />} />
-           <Route path='/allmember' element={<AllMember />} />
-           <Route path='/member_details' element={<MemberDetails />} />
-           <Route path='/our_team' element={<Ourteam />} />
-           <Route path='/leadership' element={<Leadership />} />
-           <Route path='/stakesholder' element={<Stakesholder />} />
-       </Routes>
-       <Footer />
-      
-    </div>
-  )
-}
+    <>
+    <Header />
+    <ScrollToTop />
+        <Routes>
+        {/* General Pages */}
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/skills" element={<Skills/>} />
+        <Route path="/projects" element={<Projects/>} />
+        <Route path="/experience" element={<ExperienceEducation/>} />
+        
+         {/* Auth */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Regsiter />} />
+        <Route path="/otpverify" element={<OtpVerification />} />
 
-export default App
+        {/* User Dashboard */}
+        <Route path="/user" element={<UserDashboard />}>
+          <Route path="myprofile" element={<MyProfile />} />
+          <Route path="myjobs" element={<MyJob />} />
+          <Route path="mycourses" element={<MyCourse />} />
+        </Route>
+
+      </Routes>
+        <Top />
+      <Footer />
+    </>
+  );
+};
+
+export default App;

@@ -1,135 +1,106 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import iac from '../Assets/images/logo.png'
-// import  GoogleTranslateDropdown from './GoogleTranslateDropdown'
-const Header = () => {
-    return (
-        <div>
-        <div className="container-fluid topbar px-0 px-lg-4 bgtopbar py-2 d-none d-lg-block">
-            <div className="container">
-                <div className="row gx-0 align-items-center">
-                    <div className="col-lg-8 text-center text-lg-start mb-lg-0">
-                        <div className="d-flex flex-wrap">
-                        {/* <GoogleTranslateDropdown /> */}
-                            <div className="border-end border-white pe-3">
-                                <Link to="https://maps.app.goo.gl/2abNejJfH9MuzGAN9" target='_blanck' className="text-white contactnumber text-decoration-none"><i className="fas fa-map-marker-alt text-white me-2"></i>Find A Location</Link>
-                            </div>
-                            <div className="ps-3">
-                                <Link to="mailto:syhoindia@gmail.com" className="text-white contactnumber text-decoration-none"><i className="fas fa-envelope text-white me-2"></i>syhoindia@gmail.com</Link>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-4 text-center text-lg-end">
-                        <div className="d-flex justify-content-end">
-                            <div className="d-flex  pe-3">
-                                <Link className="btn p-0 text-white me-3" to="https://www.facebook.com/syhokhajuraho?mibextid=ZbWKwL" target='_blank'><i className="fab fa-facebook-f"></i></Link>
-                                <Link className="btn p-0 text-white me-3" to="https://wa.me/9584284411" target="_blank" ><i className="fab fa-whatsapp"></i></Link>
-                                <Link className="btn p-0 text-white me-3" to="https://www.instagram.com/syhokhajuraho/" target='_blank'><i className="fab fa-instagram"></i></Link>
-                                <Link className="btn p-0 text-white me-0" to="#"><i className="fab fa-linkedin-in"></i></Link>
-                            </div>
-                           
-                            {/* <div className="dropdown ms-3">
-                                <Link to="#" className="text-dark" data-bs-toggle="dropdown"><small><i className="fas fa-globe-europe text-white me-2"></i> English</small></Link>
-                                <div className="dropdown-menu rounded">
-                                    <Link to="#" className="dropdown-item text-decoration-none">English</Link>
-                                    <Link to="#" className="dropdown-item">Hindi</Link>
-                                   
-                                </div>
-                            </div> */}
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div className="container-fluid nav-bar px-0 px-lg-4 py-lg-0">
-            <div className="container">
-                <nav className="navbar navbar-expand-lg navbar-light"> 
-                    <Link to="#" className="navbar-brand">
-                       <img src={iac} alt='logo' className='img-fluid logo' />
-                    </Link>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                        <span className="fa fa-bars"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarCollapse">
-                        <div className="navbar-nav ml-4 pl-3">
-                            <Link to="/" className="nav-item nav-link active">Home</Link>
-                            <div className="nav-item dropdown">
-                            Administrative
-                                <div className="dropdown-menu">
-                                    <Link to="/leadership" className="dropdown-item">Leadership</Link>
-                                    {/* <Link to="/governing_body" className="dropdown-item">Governing Body</Link>   */}
-                                    <Link to="/allmember" className="dropdown-item">All Members</Link>                                                                  
-                                    {/* <Link to="/our_team" className="dropdown-item">Our team</Link>                        */}
-                                </div>
-                            </div>
-                            <Link to="/aboutus" className="nav-item nav-link">About</Link>
-                            <Link to="/focussector" className="nav-item nav-link">Sectors</Link>
-                            <div className="nav-item dropdown">                            
-                                Services                               
-                                <div className="dropdown-menu">
-                                    <Link to="/career" className="dropdown-item">Career</Link>
-                                    <Link to="/consultancy" className="dropdown-item">Consultancy</Link>
-                                    {/* <Link to="/complaints" className="dropdown-item">Complaints</Link> */}
-                                    {/* <Link to="/policies" className="dropdown-item">Policies</Link> */}
-                                </div>
-                            </div>
-                            <div className="nav-item dropdown">
-                                   Membership
-                                <div className="dropdown-menu">
-                                            <Link to="/membership_registration" className="dropdown-item"> About Membership </Link>
-                                <Link to="/membershipform" className="dropdown-item">Membership Form</Link>                 
-                                    <Link to="/individual" className="dropdown-item">Individual / Practitioners</Link>
-                                    <Link to="/institutions" className="dropdown-item">Institutions/ Industries</Link>
-                                    {/* <Link to="/products" className="dropdown-item">Products</Link> */}
-                                   
-                                </div>
-                            </div>
+import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { FaBars, FaTimes } from "react-icons/fa";
 
-                            {/* <Link to="/published_news" className="nav-item nav-link">Blogs</Link> */}
-                            {/* <div className="nav-item dropdown">
-                                Activities
-                                <div className="dropdown-menu">
-                                    <Link to="/events" className="dropdown-item">Events</Link>
-                                    <Link to="/press_conference" className="dropdown-item">Press conference</Link>
-                                    <Link to="/mou" className="dropdown-item">MOU</Link>
-                                    <Link to="/news" className="dropdown-item">News</Link>
-                                </div>
-                            </div> */}
-                            <div className="nav-item dropdown">
-                                   Media
-                                <div className="dropdown-menu">
-                                    <Link to="/press_release" className="dropdown-item">Press Release</Link>
-                                    {/* <Link to="/event_news" className="dropdown-item">Event News</Link> */}
-                                    {/* <Link to="/published_news" className="dropdown-item">Published News</Link> */}
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => setIsOpen(!isOpen);
 
-                                    <Link to="/event_video" className="dropdown-item">Event Video</Link>
-                                    <Link to="/gallery" className="dropdown-item">Gallery</Link>
-                                    <Link to="/newsandupdate" className="dropdown-item">News And Updates</Link>
-                                    {/* <Link to="/media_registration" className="dropdown-item">Media Registration</Link> */}
-                                </div>
-                            </div>
-                            <Link to="/contact" className="nav-item nav-link">Contact</Link>
-                            <div className="nav-btn px-3">
-                                <Link to="/membershipform" className="btn btn-primary rounded-pill text-decoration-none py-2 px-4 ms-3 flex-shrink-0"> Join Now</Link>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="d-none d-xl-flex flex-shrink-0 ps-4">
-                        <Link to="#" className="btn btncall btn-lg-square rounded-circle position-relative wow tada" data-wow-delay=".9s">
-                            <i className="fa fa-phone-alt fa-2x p-1"></i>
-                           
-                        </Link>
-                        <div className="d-flex flex-column ms-3">
-                            <span>Contact us</span>
-                            <Link to="tel:+91-9584284411" className='text-decoration-none'><span className="text-dark contactnumber text-decoration-none">+91-9584284411</span></Link>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </div>
-        
-        </div>
-    )
-}
+  // 🔹 Added new "Experience" page link
+  const navItems = [
+    { to: "/", label: "Home" },
+    { to: "/about", label: "About" },
+    { to: "/skills", label: "Skills" },
+    { to: "/experience", label: "Experience" }, // ✅ NEW PAGE ADDED HERE
+    { to: "/projects", label: "Projects" },
+  ];
 
-export default Header
+  return (
+    <nav className="fixed w-full top-0 left-0 z-50 bg-white shadow-md text-gray-800">
+      <div className="max-w-7xl mx-auto flex justify-between items-center h-[85px] px-6 md:px-10">
+        {/* 🔹 Logo (bigger and enhanced) */}
+        <Link to="/" className="flex items-center cursor-pointer">
+          <img
+            src="/Images/subhash.png" // ✅ Update your logo path here
+            alt="Subhash Logo"
+            className="w-16 h-16 rounded-full border-2 border-teal-500 shadow-lg hover:scale-110 hover:shadow-teal-300 transition-all duration-300"
+          />
+        </Link>
+
+        {/* 🔹 Desktop Menu */}
+        <ul className="hidden md:flex space-x-10 font-medium">
+          {navItems.map((item) => (
+            <li key={item.to}>
+              <NavLink
+                to={item.to}
+                className={({ isActive }) =>
+                  `cursor-pointer transition-all duration-300 text-lg ${
+                    isActive
+                      ? "text-teal-500 border-b-2 border-teal-500 pb-1"
+                      : "hover:text-teal-500"
+                  }`
+                }
+              >
+                {item.label}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+
+        {/* 🔹 Contact Button */}
+        <div className="hidden md:block">
+          <Link
+            to="/contact"
+            className="bg-teal-500 text-white px-7 py-3 rounded-full font-semibold text-lg hover:bg-teal-600 transition-all duration-300 shadow-md hover:shadow-lg hover:scale-105"
+          >
+            Contact
+          </Link>
+        </div>
+
+        {/* 🔹 Mobile Menu Button */}
+        <button
+          className="md:hidden text-2xl text-gray-800"
+          onClick={toggleMenu}
+        >
+          {isOpen ? <FaTimes /> : <FaBars />}
+        </button>
+      </div>
+
+      {/* 🔹 Mobile Dropdown Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-white border-t border-gray-200 shadow-md">
+          <ul className="flex flex-col items-center py-6 space-y-6 font-medium text-gray-800">
+            {navItems.map((item) => (
+              <li key={item.to}>
+                <NavLink
+                  to={item.to}
+                  onClick={toggleMenu}
+                  className={({ isActive }) =>
+                    `cursor-pointer transition-colors ${
+                      isActive ? "text-teal-500" : "hover:text-teal-500"
+                    }`
+                  }
+                >
+                  {item.label}
+                </NavLink>
+              </li>
+            ))}
+
+            {/* 🔹 Mobile Contact Button */}
+            <li>
+              <Link
+                to="/contact"
+                onClick={toggleMenu}
+                className="bg-teal-500 text-white px-7 py-3 rounded-full font-semibold text-lg hover:bg-teal-600 transition-all duration-300 shadow-md hover:scale-105"
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </div>
+      )}
+    </nav>
+  );
+};
+
+export default Navbar;

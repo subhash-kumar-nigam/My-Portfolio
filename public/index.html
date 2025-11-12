@@ -1,84 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Web site created using create-react-app" />
-  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <title>Shri Yog & Health organization-SYHO</title>
-   <!-- Google Web Fonts -->
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:slnt,wght@-10..0,100..900&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="utf-8" />
 
-   <!-- Icon Font Stylesheet -->
-   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Favicon & App Icons -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="%PUBLIC_URL%/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="%PUBLIC_URL%/android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="%PUBLIC_URL%/android-chrome-512x512.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="%PUBLIC_URL%/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="%PUBLIC_URL%/favicon-16x16.png"
+    />
+    <link rel="manifest" href="%PUBLIC_URL%/site.webmanifest" />
 
-   <!-- Libraries Stylesheet -->
-   <link rel="stylesheet" href="lib/animate/animate.min.css"/>
-   <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-   <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-      <!-- Customized Bootstrap Stylesheet -->
-      <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Viewport & Theme -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#14B8A6" />
 
-      <!-- Template Stylesheet -->
-      <link href="css/style.css" rel="stylesheet">
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
+    <!-- Author & Copyright -->
+    <meta name="author" content="Subhash Nigam" />
+    <meta name="copyright" content="© 2025 Subhash Nigam" />
 
-<body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-        <!-- JavaScript Libraries -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/counterup/counterup.min.js"></script>
-        <script src="lib/lightbox/js/lightbox.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        
+    <!-- Primary Meta Tags -->
+    <title>Subhash Nigam | Web Developer & React.js </title>
+    <meta
+      name="title"
+      content="Subhash Nigam | Web Developer & React.js Specialist"
+    />
+    <meta
+      name="description"
+      content="I'm Subhash Nigam — a passionate Web Developer specializing in React.js, Node.js, Express.js, and MySQL. I build responsive, scalable, and modern web applications that deliver great user experiences."
+    />
+    <meta
+      name="keywords"
+      content="Subhash Nigam, web developer, React developer, frontend developer, portfolio, JavaScript, Node.js, Express.js, Tailwind CSS, full stack developer"
+    />
 
-        <!-- Template Javascript -->
-        <script src="js/main.js"></script>
+    <!-- Open Graph (Social Sharing Preview) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://subhash-nigam.vercel.app/" />
+    <meta
+      property="og:title"
+      content="Subhash Nigam | Web Developer & React.js Specialist"
+    />
+    <meta
+      property="og:description"
+      content="Passionate React.js Developer building beautiful, responsive web experiences using modern technologies."
+    />
+    <meta
+      property="og:image"
+      content="%PUBLIC_URL%/subhash-nigam-og-image.jpg"
+    />
 
-        <!-- <div id="google_translate_element"></div>
-        <script type="text/javascript">
-          function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-              pageLanguage: 'en',
-              includedLanguages: 'en,hi',
-              layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
-          }
-        </script>
-        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
-        
-        
-</body>
+    <!-- Twitter Meta -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:title"
+      content="Subhash Nigam | Web Developer & React.js Specialist"
+    />
+    <meta
+      property="twitter:description"
+      content="Building modern, scalable, and interactive web apps using React.js, Node.js, and Tailwind CSS."
+    />
+    <meta
+      property="twitter:image"
+      content="%PUBLIC_URL%/subhash-nigam-og-image.jpg"
+    />
 
+    <!-- Tailwind CSS CDN (optional if not using via npm) -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Optional Script (Example: Razorpay or Analytics) -->
+    <!-- <script src="https://checkout.razorpay.com/v1/checkout.js"></script> -->
+  </head>
+
+  <body class="bg-white text-gray-900">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
 </html>
